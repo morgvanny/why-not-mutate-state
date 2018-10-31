@@ -4,14 +4,10 @@ import Number from './Number';
 export default function SuperSpecialWeirdThing(params) {
   const [num, setNum] = useState(0);
 
-  const handleClick = () => {
-    setNum(num + 1);
-  };
-
   return (
     <div>
       <Number type={'super specially set'} num={num} />
-      <button onClick={handleClick}>
+      <button onClick={() => setNum(num + 1)}>
         Click for something super special and weird
       </button>
     </div>
