@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Number from './Number';
+import SuperSpecialWeirdThing from './SuperSpecialWeirdThing';
 
 class App extends Component {
   state = {
@@ -21,15 +23,17 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Why Can't We Directly Mutate State???</h1>
-        <p>Number: {this.state.num}</p>
+        <Number type={'good'} num={this.state.num} />
         <button onClick={this.handleClick}>
           Click to increment the number
         </button>
         <br />
-        <p>Sad number: {this.state.sadNum}</p>
+        <Number type={'sad'} num={this.state.sadNum} />
         <button onClick={this.handleClickBadly}>
           Click to try and fail to increment number
         </button>
+        <br />
+        <SuperSpecialWeirdThing />
       </div>
     );
   }
